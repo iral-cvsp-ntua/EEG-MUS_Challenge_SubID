@@ -8,9 +8,9 @@ ii) Code for network finetuning, and inference on the training/validation split 
 
 To fine-tune the models, run the following commands:
 
-- Contrastive pre-training: python3 train.py --task subject_identification --split_dir data/splits/ --splitnum splitnum --model eegchannelnet --resume contrastive_weights.pth --lr 0.0001
+- Contrastive pre-training: ```python3 train.py --task subject_identification --split_dir data/splits/ --splitnum splitnum --model eegchannelnet --resume contrastive_weights.pth --lr 0.0001'''
   
-- DEAP (in-domain) pre-training: python3 train.py --task subject_identification --split_dir data/splits/ --splitnum  splitnum --model mobilenet --resume deap_weights.pth --lr 0.001
+- DEAP (in-domain) pre-training: ```python3 train.py --task subject_identification --split_dir data/splits/ --splitnum  splitnum --model mobilenet --resume deap_weights.pth --lr 0.001'''
 
-- ImageNet (out-of-domain) pre-training: python3 train.py --task subject_identification --split_dir data/splits/ --splitnum splitnum --model mobilenet --lr 0.0001
+- ImageNet (out-of-domain) pre-training: ```python3 train.py --task subject_identification --split_dir data/splits/ --splitnum splitnum --model mobilenet --lr 0.0001'''
 
