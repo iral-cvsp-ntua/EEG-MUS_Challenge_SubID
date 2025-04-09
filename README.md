@@ -5,7 +5,7 @@ The EEG-Music Signal Processing Grand Challenge concerns 1) Person Identificatio
 
 i) Weights for the contrastively-pretrained and DEAP-pretrained networks (the ImageNet weights are obtained through a [publicly available checkpoint](https://huggingface.co/docs/timm/en/models/mobilenet-v3), and are loaded in-code).
 
-ii) Code for network finetuning on the training/validation split of the dataset.
+ii) Code for network finetuning on the training/validation split of the dataset (internally re-ordered into training, validation and testing data in a 4:1:1 ratio).
 
 To fine-tune the models, run the following commands:
 
