@@ -22,7 +22,7 @@ For contrastive pre-training, enter the ```contrastive_setup``` sub-directory, a
   - ```chanmask```: randomly mask out (hide) approx. half of the EEG channels.
   - ```timemask```: randomly mask out (hide) approx. half of the EEG timesteps.
 
-The weights are saved in the subdirectory specified by the ```run-name`` argument.
+The weights are saved in the subdirectory specified by the ```run_name`` argument (```checkpoints/run_name```).
 
 To fine-tune the models from the given-weights, run the following commands:
 
