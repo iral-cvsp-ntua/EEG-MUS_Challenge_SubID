@@ -13,9 +13,16 @@ To run the contents of the repository, a functioning python environment with ```
 
 For contrastive pre-training, enter the ```contrastive_setup``` sub-directory, and run the following command:
 
-```python3 train.py --run_name [name of your run] --model [architecture_name] --augments [augmentation_list]```
+```python3 train.py --run_name [name of your run] --model [architecture_name] --augments [augmentation_list]```, where:
 
-To fine-tune the models, run the following commands:
+- ```--model``` defines the backbone architecture and can be either of ```{eegchannelnet, mobilenet}```
+
+- ```--augment``` defines the augmentations to be applied at each contrastive pair before being fed to the network, and can be any among ```{crop,chanmask,timemask}```
+  - ```crop```: cut two different 10-sec slices from the EEG
+  - ```chanmask```: randomly mask out (hide) approx. half of the EEG channels.
+  - ```timemask```: randomly mask out (hide) approx. half of the EEG timesteps.  
+
+To fine-tune the models from the given-weights, run the following commands:
 
 - Contrastive pre-training: ```python3 train.py --task subject_identification --split_dir data/splits/ --splitnum splitnum --model eegchannelnet --resume contrastive.pth --lr 0.0001```
   
