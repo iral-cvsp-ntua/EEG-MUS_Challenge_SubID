@@ -9,11 +9,11 @@ ii) Code for contrastive network pre-training, and
 
 iii) Code for network finetuning on the training/validation split of the dataset (internally re-ordered into training, validation and testing data in a 4:1:1 ratio).
 
-To run the contents of the repository, a functioning python environment with ```pytorch```, ```wandb``` and the ```timm``` package is required; alternatively, you can set up the necessary libraries with the provided ```.yml''' file.
+To run the contents of the repository, a functioning python environment with ```pytorch```, ```wandb``` and the ```timm``` package is required; alternatively, you can set up the necessary libraries with the provided ```.yml``` file.
 
-For contrastive pre-training, enter the ```contrastive_setup''' sub-directory, and run the following command:
+For contrastive pre-training, enter the ```contrastive_setup``` sub-directory, and run the following command:
 
-```python3 train.py --run_name [name of your run] --model [architecture_name] --augments [augmentation_list]'''
+```python3 train.py --run_name [name of your run] --model [architecture_name] --augments [augmentation_list]```
 
 To fine-tune the models, run the following commands:
 
