@@ -20,7 +20,9 @@ For contrastive pre-training, enter the ```contrastive_setup``` sub-directory, a
 - ```--augment``` defines the augmentations to be applied at each contrastive pair before being fed to the network, and can be any among ```{crop,chanmask,timemask}```
   - ```crop```: cut two different 10-sec slices from the EEG
   - ```chanmask```: randomly mask out (hide) approx. half of the EEG channels.
-  - ```timemask```: randomly mask out (hide) approx. half of the EEG timesteps.  
+  - ```timemask```: randomly mask out (hide) approx. half of the EEG timesteps.
+
+The weights are saved in the subdirectory specified by the ```run-name`` argument.
 
 To fine-tune the models from the given-weights, run the following commands:
 
