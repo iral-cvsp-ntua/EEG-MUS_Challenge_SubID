@@ -319,8 +319,8 @@ class Trainer:
                     #test_accuracy_balanced_at_max_val_accuracy_balanced = result_metrics['test']['balanced_accuracy'][-1]
                     # Save model
                     # save the best model
-                    #print('SAVED')
-                    #self.saver.save_model(net, self.args.model, epoch, model_name=f"{self.args.model}")
+                    print('SAVED')
+                    self.saver.save_model(net, self.args.model, epoch, model_name=f"{self.args.model}")
                 #self.saver.add_scalar(f"test/acc_balanced_at_max_val_acc_balanced", test_accuracy_balanced_at_max_val_accuracy_balanced, epoch)
                 #self.saver.add_scalar(f"val/max_balanced_accuracy", max_val_accuracy_balanced, epoch)
 
