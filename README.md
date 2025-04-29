@@ -1,5 +1,6 @@
-# EEG-MUS_Challenge_SubID
 IRAL-NTUA's team solutions for Track 1 of the EEG-Music Signal Processing GC, hosted @ICASSP 2025.
+
+## Introduction
 
 The EEG-Music Signal Processing Grand Challenge concerns 1) Person Identification and 2) Emotion Recognition from EEG recordings, collected from participants while listening to musical pieces. For the Person Identification Track, we propose a three-network ensemble, pre-trained through distinct datasets and (supervised or self-supervised) strategies: In-dataset contrastive self-supervised pretraining, in-domain supervised pretraining and out-of-domain supervised pretraining. This repository is built on the [official challenge repository](https://github.com/SalvoCalcagno/eeg-music-challenge-icassp-2025-baselines) and contains:
 
@@ -12,6 +13,8 @@ iii) Weights for the contrastively-pretrained and DEAP-pretrained networks (the 
 and iv) Code for performing inference on unseen data, on the above training/validation split.
 
 To run the contents of the repository, a functioning python environment with ```pytorch```, ```wandb``` and the ```timm``` package is required; alternatively, you can set up the necessary libraries with the provided ```.yml``` file.
+
+## Contrastive Pre-training
 
 For contrastive pre-training, enter the ```contrastive_setup``` sub-directory, and run the following command:
 
@@ -26,6 +29,8 @@ For contrastive pre-training, enter the ```contrastive_setup``` sub-directory, a
 
 The weights are saved in the subdirectory specified by the ```run_name`` argument (```checkpoints/run_name```).
 
+## In-Domain Finetuning
+
 To fine-tune the models from the given-weights, run the following commands:
 
 - Contrastive pre-training: ```python3 train.py --task subject_identification --split_dir data/splits/ --splitnum splitnum --model eegchannelnet --resume contrastive.pth --lr 0.0001```
@@ -37,6 +42,8 @@ To fine-tune the models from the given-weights, run the following commands:
 The argument ```splitnum``` corresponds to the number of cross-validation fold, and takes values in the range [0, 5].
 
 The weights are saved into the (automatically created if it does not already exist) ```exps/subject_identification/{model}/baseline_{timestamp}/{model}.pth``` subdirectory.
+
+## Inference
 
 To acquire labels for a specific split, run the ```inference.py``` script as: ```python3 inference.py --run_name {my_run} --task subject_identification --split_dir data/splits --splitnum splitnum --model {eegchannelnet, mobilenet} --resume {path_to_model}```. The predicted labels for the specific model will be output at the ```output_{my_run}_{splitnum}.npy``` file. 
 
