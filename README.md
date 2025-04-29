@@ -14,7 +14,7 @@ and iv) Code for performing inference on unseen data, on the above training/vali
 
 To run the contents of the repository, a functioning python environment with ```pytorch```, ```wandb``` and the ```timm``` package is required; alternatively, you can set up the necessary libraries with the provided ```.yml``` file.
 
-## Contrastive Pre-training
+## Contrastive Pre-Training
 
 For contrastive pre-training, enter the ```contrastive_setup``` sub-directory, and run the following command:
 
